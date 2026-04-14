@@ -20,6 +20,7 @@ class Karyawan {
         }
     }
 
+    // Penyediaan fungsi Getter untuk atribut yang perlu diakses secara read-only oleh subclass atau kelas luar.
     public double getRatingKinerja() {
         return ratingKinerja;
     }

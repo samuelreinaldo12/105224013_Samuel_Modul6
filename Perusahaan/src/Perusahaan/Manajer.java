@@ -8,6 +8,8 @@ class Manajer extends Karyawan {
         this.jumlahAnggotaTim = jumlahAnggotaTim;
     }
 
+    
+    // Overriding hitungGajiTotal untuk mengalkulasi tunjangan struktural dan bonus kepemimpinan.
     @Override
     public double hitungGajiTotal() {
         double gajiDasar = super.hitungGajiTotal();
@@ -15,6 +17,8 @@ class Manajer extends Karyawan {
         double tunjanganManajerial = this.jumlahAnggotaTim * 300000;
         double totalSementara = gajiDasar + tunjanganManajerial;
 
+       // Gaji ekstra untuk performa luar biasa (rating > 4.5).
+        // Menambahkan 15% dari akumulasi gaji dasar dan tunjangan.
         if (super.getRatingKinerja() > 4.5) {
             totalSementara += (totalSementara * 0.15);
         }
